@@ -1,0 +1,21 @@
+classDiagram
+    class Project {
+        projectId
+    }
+    class Reference {
+        sourcePath
+        sha256
+        selection
+    }
+    class BatchItem {
+        jobId
+        referenceHash
+    }
+    class ModelArtifact {
+        path
+        sha256
+        validation
+    }
+    Project "1" --> "*" Reference : scopes
+    Reference "1" --> "*" BatchItem : supplies
+    BatchItem --> ModelArtifact : matched import

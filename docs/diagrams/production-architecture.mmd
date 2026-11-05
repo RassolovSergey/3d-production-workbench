@@ -1,0 +1,12 @@
+flowchart TB
+    Owner[Оператор] --> UI[Browser ES modules]
+    UI --> API[Node.js / Express: loopback]
+    API --> Records[JSON / Markdown: проекты и ревизии]
+    API --> DB[(SQLite: операции и партии)]
+    API --> Assets[Локальные ассеты]
+    API --> Tools[Python / Blender tooling]
+    API --> Assistant[Assistant adapter]
+    Assistant --> Graph[LangGraph: последовательные роли]
+    Graph --> Codex[Codex app-server]
+    Codex --> MCP[MCP с областью проекта]
+    MCP --> Retrieval[SQLite FTS5 / BM25]

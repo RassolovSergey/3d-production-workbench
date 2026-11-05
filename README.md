@@ -29,6 +29,13 @@
 
 ## Процесс и контроль качества
 
+![Путь артефакта / контрольные переходы](docs/diagrams/production-workflow.svg)
+
+<details>
+<summary>Исходник Mermaid и HTML для экспорта</summary>
+
+[HTML с экспортом PNG/PDF](docs/diagrams/production-workflow.html) · [Mermaid](docs/diagrams/production-workflow.mmd)
+
 ```mermaid
 flowchart LR
     C[Концепт] --> R[Кандидаты референсов]
@@ -45,9 +52,18 @@ flowchart LR
     S --> O[Материалы выпуска]
 ```
 
+</details>
+
 Схема отражает семантические этапы. Она не утверждает, что весь путь исполняется автоматически или имеет единый транзакционный state machine.
 
 ## Архитектура
+
+![3D Production Workbench / архитектура](docs/diagrams/production-architecture.svg)
+
+<details>
+<summary>Исходник Mermaid и HTML для экспорта</summary>
+
+[HTML с экспортом PNG/PDF](docs/diagrams/production-architecture.html) · [Mermaid](docs/diagrams/production-architecture.mmd)
 
 ```mermaid
 flowchart TB
@@ -64,9 +80,18 @@ flowchart TB
     MCP --> Retrieval[SQLite FTS5 / BM25]
 ```
 
+</details>
+
 Активный интерфейс использует браузерные ES modules. React/Vite сохранён от предыдущей итерации; его наличие в package.json не делает его текущей архитектурой рабочего экрана. Один workstation-процесс выбран под одного оператора и локальные большие файлы.
 
 ### Концептуальная модель происхождения
+
+![Происхождение артефакта / UML](docs/diagrams/production-provenance.svg)
+
+<details>
+<summary>Исходник Mermaid и HTML для экспорта</summary>
+
+[HTML с экспортом PNG/PDF](docs/diagrams/production-provenance.html) · [Mermaid](docs/diagrams/production-provenance.mmd)
 
 ```mermaid
 classDiagram
@@ -91,6 +116,8 @@ classDiagram
     Reference "1" --> "*" BatchItem : supplies
     BatchItem --> ModelArtifact : matched import
 ```
+
+</details>
 
 Это концептуальная UML-модель, а не точное отображение SQL-таблиц. Хэш доказывает совпадение содержимого, но не художественное качество или пригодность модели к печати.
 
