@@ -38,19 +38,19 @@ Early set allocation, free trial selection and collection completeness checks ar
 
 ## Production workflow
 
-![Artifact workflow, Russian labels](docs/diagrams/production-workflow.svg)
+![Artifact workflow](docs/diagrams/production-workflow.en.svg)
 
 The application automates file preparation, batch structure and format validation. Creative selection, ambiguous imports and release readiness remain operator decisions.
 
 ## Technical implementation
 
-![Architecture, Russian labels](docs/diagrams/production-architecture.svg)
+![Architecture](docs/diagrams/production-architecture.en.svg)
 
 The active UI uses browser ES modules with Node.js and Express. JSON/Markdown store project documents; SQLite handles operations and batches. Python and Blender tooling support preparation and cataloguing. Large assets remain local.
 
 AI supports context handling, drafting and review through Codex, MCP and sequential LangGraph roles. FTS5/BM25 provides document retrieval. Deterministic code validates file integrity.
 
-![Conceptual provenance model, Russian labels](docs/diagrams/production-provenance.svg)
+![Conceptual provenance model](docs/diagrams/production-provenance.en.svg)
 
 Expected-revision checks prevent stale screens from silently overwriting newer decisions. SHA-256 identifies file contents; it does not establish artistic quality or print readiness.
 
